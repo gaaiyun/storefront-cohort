@@ -1,0 +1,58 @@
+# Advanced Customer Analytics Platform
+# 高级客户分析平台依赖
+
+# Core Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+scikit-learn-extra>=0.3.0
+
+# Visualization
+plotly>=5.15.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# UI Framework
+streamlit>=1.28.0
+streamlit-aggrid>=0.3.0
+streamlit-plotly-events>=0.0.6
+
+# Data Validation (Great Expectations style)
+pydantic>=2.0.0
+pandera>=0.17.0
+
+# Explainable AI
+shap>=0.43.0
+lime>=0.2.0
+
+# LTV Prediction
+lifetimes>=0.11.3
+
+# Statistical Analysis
+statsmodels>=0.14.0
+
+# Excel Support
+openpyxl>=3.1.0
+xlrd>=2.0.0
+
+# Report Generation
+reportlab>=4.0.0
+fpdf2>=2.7.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-asyncio>=0.21.0
+
+# Utilities
+tqdm>=4.65.0
+joblib>=1.3.0
+python-dateutil>=2.8.0
+
+# Optional: Database Support
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0  # PostgreSQL
+pymysql>=1.1.0  # MySQL
