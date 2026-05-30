@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "storefront-cohort"
+version = "0.3.0"
+description = "Local customer-insight reports from an order CSV: RFM segments, retention cohorts, CLV, and win-back lists."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "gaaiyun" }]
+keywords = [
+    "ecommerce",
+    "rfm",
+    "cohort-analysis",
+    "customer-lifetime-value",
+    "retention",
+    "shopify",
+    "woocommerce",
+    "stripe",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial",
+    "Environment :: Console",
+]
+dependencies = [
+    "pandas>=1.5",
+    "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+# Probabilistic CLV via BG/NBD + Gamma-Gamma. The tool falls back to a
+# built-in heuristic when this is absent, so it is genuinely optional.
+clv = ["lifetimes>=0.11"]
+# Heavy ML modules under storefront_cohort.advanced (not on the core path).
+advanced = ["scikit-learn>=1.1", "shap>=0.41"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+storefront-cohort = "storefront_cohort.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gaaiyun/Advanced-Customer-Analytics"
+
+[tool.setuptools]
+packages = ["storefront_cohort", "storefront_cohort.advanced"]
+
+[tool.setuptools.package-data]
+storefront_cohort = ["data/*.csv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
