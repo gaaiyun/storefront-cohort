@@ -15,7 +15,6 @@ from sklearn.metrics import (
     silhouette_score,
     calinski_harabasz_score,
     davies_bouldin_score,
-    contour_score
 )
 from sklearn.decomposition import PCA
 import plotly.graph_objects as go
